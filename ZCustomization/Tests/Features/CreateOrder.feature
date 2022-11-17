@@ -1,7 +1,6 @@
+@ignore
 Feature: Order Create
-
-@akki
-Scenario: Create Order
+ Scenario: Create Order
 	Given I have a 'POST' API 'CreateOrders'
 	And I have a json input file
 	| FileName |

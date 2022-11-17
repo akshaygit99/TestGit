@@ -20,25 +20,22 @@ namespace ZCustomization.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Order Create")]
-    [NUnit.Framework.CategoryAttribute("ignore")]
-    public partial class OrderCreateFeature
+    [NUnit.Framework.DescriptionAttribute("Create Zoho Sales Order")]
+    public partial class CreateZohoSalesOrderFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "ignore"};
+        private string[] _featureTags = ((string[])(null));
         
-#line 1 "CreateOrder.feature"
+#line 1 "Create ZohoSalesOrder.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features", "Order Create", null, ProgrammingLanguage.CSharp, new string[] {
-                        "ignore"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features", "Create Zoho Sales Order", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,13 +74,15 @@ namespace ZCustomization.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create Order")]
-        public virtual void CreateOrder()
+        [NUnit.Framework.DescriptionAttribute("Get Zoho Auth Token")]
+        [NUnit.Framework.CategoryAttribute("zoho")]
+        public virtual void GetZohoAuthToken()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "zoho"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Order", null, tagsOfScenario, argumentsOfScenario);
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Zoho Auth Token", null, tagsOfScenario, argumentsOfScenario);
+#line 4
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -103,20 +102,13 @@ namespace ZCustomization.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 4
- testRunner.Given("I have a \'POST\' API \'CreateOrders\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "FileName"});
-                table1.AddRow(new string[] {
-                            "TestData/Environment/CreateOrder.json"});
 #line 5
- testRunner.And("I have a json input file", ((string)(null)), table1, "And ");
+ testRunner.Given("I have a \'POSTAUTH\' API \'Token\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 6
+ testRunner.When("I send API request for \'zohoauth\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.When("I send API request for \'customerapi\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 9
  testRunner.Then("I validate status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

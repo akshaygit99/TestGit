@@ -14,14 +14,6 @@
                     "value": "9d952fe3e9424cd8802cde731b0b224d"
                   },
                   {
-                    "key": "BearerToken",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im1pZGRsZXdhcmUuY2xpZW50IiwibmJmIjoxNjExNTgyNzY3LCJleHAiOjE2MTIxODc1NjcsImlhdCI6MTYxMTU4Mjc2N30._iYmDwSM_qCmR1Z41kcCDkhNeoWgTRlKYK-gfkCcGpU"
-                  },
-                  {
-                    "key": "ApiVersion",
-                    "value": "v3"
-                  },
-                  {
                     "key": "CreateOrders",
                     "value": "/decorate-csg-order"
                   }
@@ -29,13 +21,34 @@
         },
 
         {
-            "environment" : "TestB",
+            "environment" : "Zoho",
             "environmentData" :
             [
                  {
-                 "key": "Test",
-                 "value": "Test"
-                 }
+                 "key": "zohoBaseUrl",
+                 "value": "https://creator.zoho.com/api/v2/zoho_jon1129/erp-core-v4-0-jon-test-env"
+                 },
+                 {
+                  "key": "zohoAuthUrl",
+                  "value":"https://accounts.zoho.com"
+                 },
+                 {
+                  "key": "Token",
+                  "value": "/oauth/v2/token"
+                },
+                {
+                  "key": "zohoClientID",
+                  "value": "1000.PF6C3PF21MJUXRV3GFIDV4XOZYY3IA"
+                },
+                {
+                "key": "clientSecretId",
+                "value": "b0326658a72e7d530d96401b8538d36f2886be3077"
+                },
+                {
+                  "key": "scope",
+                  "value": "ZohoCreator.form.CREATE,ZohoCreator.report.READ,ZohoCreator.meta.form.READ,ZohoCreator.meta.application.READ"
+                }
+    
             ]
         }
     ]

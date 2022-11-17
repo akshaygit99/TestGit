@@ -5,6 +5,8 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ZCustomization
 {
@@ -48,10 +50,26 @@ namespace ZCustomization
 
                 case "post":
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, client.BaseAddress);
+                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUrl);
                     httpRequestMessage.Content = new StringContent(jsonInput, Encoding.UTF8, "application/json");
                     timer.Start();
                     responseTask = client.SendAsync(httpRequestMessage);
+                    responseTask.Wait();
+                    timer.Stop();
+                    response = getAllData(responseTask,timer);
+                    return response;
+
+                 case "postauth":
+                    HttpRequestMessage httpRequest = new HttpRequestMessage(HttpMethod.Post, requestUrl);
+                    var urlEncodedItems = new Dictionary<string, string>();
+                    urlEncodedItems.Add("grant_type", "client_credentials");
+                    urlEncodedItems.Add("client_id", jsonHelper.GetDataByEnvironment("zohoClientID"));
+                    urlEncodedItems.Add("client_secret", jsonHelper.GetDataByEnvironment("clientSecretId"));
+                    urlEncodedItems.Add("scope", jsonHelper.GetDataByEnvironment("scope"));
+                    HttpContent content =  new FormUrlEncodedContent(urlEncodedItems);
+                    httpRequest.Content = content;
+                    timer.Start();
+                    responseTask = client.SendAsync(httpRequest);
                     responseTask.Wait();
                     timer.Stop();
                     response = getAllData(responseTask,timer);
@@ -104,6 +122,14 @@ namespace ZCustomization
                     localClient.BaseAddress = new Uri(url);
                     localClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", jsonHelper.GetDataByEnvironment("OcpApimSubscriptionKey"));
                     localClient.DefaultRequestHeaders.Add("Ocp-Apim-Trace", "true");
+                    return localClient;
+
+                case "zohoauth":
+                    var zohoBaseUrl = jsonHelper.GetDataByEnvironment("zohoAuthUrl");
+                    localClient.BaseAddress = new Uri(buildRequestUrl(zohoBaseUrl, "/", "POSTAUTH", null));
+                    var tokenEndpoint = jsonHelper.GetDataByEnvironment("Token");
+                    localClient = new HttpClient();
+                    localClient.BaseAddress = new Uri(buildRequestUrl(zohoBaseUrl, endpoint, methodType, jsonInput));
                     return localClient;
 
                 default:
