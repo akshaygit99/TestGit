@@ -169,8 +169,6 @@ C:\ZCustomization\ZCustomization\obj\Debug\net6.0\ZCustomization.csproj.CopyComp
 C:\ZCustomization\ZCustomization\obj\Debug\net6.0\ZCustomization.dll
 C:\ZCustomization\ZCustomization\obj\Debug\net6.0\refint\ZCustomization.dll
 C:\ZCustomization\ZCustomization\obj\Debug\net6.0\ZCustomization.pdb
-C:\ZCustomization\ZCustomization\bin\Debug\net6.0\client-secrets.json
-C:\ZCustomization\ZCustomization\bin\Debug\net6.0\Config\API_Data_Config.json
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\ZCustomization.deps.json
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\ZCustomization.runtimeconfig.json
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\ZCustomization.dll
@@ -181,4 +179,5 @@ C:\ZCustomization\ZCustomization\bin\Debug\net6.0\Default.srprofile
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\SpecRunTestProfile.xsd
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\SpecRunTestProfile_2011_09.xsd
 C:\ZCustomization\ZCustomization\bin\Debug\net6.0\extent-config.xml
-C:\ZCustomization\ZCustomization\bin\Debug\net6.0\TestData\TestV3\CreateOrder.json
+C:\ZCustomization\ZCustomization\bin\Debug\net6.0\clientSecrets.json
+C:\ZCustomization\ZCustomization\bin\Debug\net6.0\Config\API_Data_Config.json

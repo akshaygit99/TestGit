@@ -10,7 +10,7 @@ namespace ZCustomization.Config
         {
             var testEnvironment = Environment.GetEnvironmentVariable("Environment");
             if(testEnvironment == null){
-                var testConfig = new ConfigurationBuilder().AddJsonFile("client-secrets.json").Build();
+                var testConfig = new ConfigurationBuilder().AddJsonFile("clientSecrets.json").Build();
             return  testConfig["Environment"];
             } else
             return  testEnvironment;

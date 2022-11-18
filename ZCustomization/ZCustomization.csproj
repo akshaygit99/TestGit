@@ -40,7 +40,7 @@
     <Folder Include="Reports\"/>
   </ItemGroup>
   <ItemGroup>
-    <None Update="client-secrets.json">
+    <None Update="clientSecrets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="TestData\TestV3\CreateOrder.json">
